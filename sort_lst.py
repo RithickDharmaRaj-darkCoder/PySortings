@@ -20,10 +20,11 @@ def selection():
     for i in range(lsize):
         elst = int(input("Enter the elements to add it in list : "))
         lst.append(elst)
-    print("Before Selection Sort : ",lst)
+    print("Before Selection Sort : ", lst)
 
-    for all in range(len(lst)):
+    for all in range(len(lst) - 1):
         min_val = min(lst[all:])
-        min_index = lst.index(min_val)
-        lst[all],lst[min_index] = lst[min_index],lst[all]
-    print("After Selection Sort : ",lst)
+        min_index = lst.index(min_val, all)
+        print(min_index)
+        lst[all], lst[min_index] = lst[min_index], lst[all]
+    print("After Selection Sort : ", lst)

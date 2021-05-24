@@ -6,5 +6,7 @@ sort_iput = input("Enter one sorting method name : ").upper()
 
 if sort_iput == 'BUBBLE':
     bubblesort()
+elif sort_iput == 'SELECTION':
+    selection()
 else:
     print("Invalid Answer!")
