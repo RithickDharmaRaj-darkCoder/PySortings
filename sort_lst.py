@@ -22,9 +22,12 @@ def selection():
         lst.append(elst)
     print("Before Selection Sort : ", lst)
 
-    for all in range(len(lst) - 1):
-        min_val = min(lst[all:])
-        min_index = lst.index(min_val, all)
-        print(min_index)
-        lst[all], lst[min_index] = lst[min_index], lst[all]
+    for outer in range(len(lst) - 1):
+        min_index = outer
+        for inner in range(outer + 1, len(lst)):
+            if lst[inner] < lst[min_index]:
+                min_index = inner
+        if lst[outer] != lst[min_index]:
+            lst[outer], lst[min_index] = lst[min_index], lst[outer]
+        print(lst)
     print("After Selection Sort : ", lst)
