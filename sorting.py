@@ -1,6 +1,6 @@
 # Controlling of sort...
 from sort_lst import *
-aval_sort = ['Bubble']
+aval_sort = ['Bubble','Selection']
 print("Availabe Sorting Methods : ",aval_sort)
 sort_iput = input("Enter one sorting method name : ").upper()
 

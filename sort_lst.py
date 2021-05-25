@@ -6,13 +6,12 @@ def bubblesort():
     for i in range(lsize):
         elst = int(input("Enter the elements to add it in list : "))
         lst.append(elst)
-    print(lst)
-
-    for outer in range(len(lst)-1,0,-1):
-        for inner in range(outer):
-            if lst[inner] > lst[outer]:
-                lst[inner]
-    print(lst)
+    print("Before Bubble Sort : ", lst)
+    for i in range(len(lst) - 1):
+        for outer in range(len(lst) - 1):
+            if lst[outer] > lst[outer + 1]:
+                lst[outer], lst[outer + 1] = lst[outer + 1], lst[outer]
+    print("After Bubble Sort : ", lst)
 
 def selection():
     lst = []
@@ -29,5 +28,4 @@ def selection():
                 min_index = inner
         if lst[outer] != lst[min_index]:
             lst[outer], lst[min_index] = lst[min_index], lst[outer]
-        print(lst)
     print("After Selection Sort : ", lst)
