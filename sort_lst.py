@@ -46,3 +46,6 @@ def insertion():
             postion -= 1
         lst[postion] = curent_value
     print(f'After Insertion Sort : {lst}')
+
+def merge():
+    #

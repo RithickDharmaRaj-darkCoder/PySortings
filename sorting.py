@@ -12,5 +12,7 @@ elif (sort_iput == 'SELECTION SORT' or sort_iput == 'SELECTION'):
     selection()
 elif (sort_iput == 'INSERTION SORT' or sort_iput == 'INSERTION'):
     insertion()
+elif (sort_iput == 'MERGE SORT' or sort_iput == 'MERGE'):
+    merge()
 else:
     print("Invalid Answer!")
