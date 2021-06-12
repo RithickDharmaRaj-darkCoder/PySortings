@@ -1,6 +1,6 @@
 # Controlling of sort...
 from sort_lst import *
-aval_sort = ['Bubble Sort','Selection Sort','Insertion Sort','Merge Sort']
+aval_sort = ('Bubble Sort','Selection Sort','Insertion Sort','Merge Sort')
 print('Available Sortings...')
 count = 1
 for i in aval_sort:
