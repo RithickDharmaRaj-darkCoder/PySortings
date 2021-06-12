@@ -1,12 +1,16 @@
 # Controlling of sort...
 from sort_lst import *
-aval_sort = ['Bubble','Selection']
-print("Availabe Sorting Methods : ",aval_sort)
+aval_sort = ['Bubble Sort','Selection Sort','Insertion Sort']
+print('Available Sortings...')
+for i in aval_sort:
+    print(f'    {i},')
 sort_iput = input("Enter one sorting method name : ").upper()
 
-if sort_iput == 'BUBBLE':
+if (sort_iput == 'BUBBLE SORT' or sort_iput == 'BUBBLE'):
     bubblesort()
-elif sort_iput == 'SELECTION':
+elif (sort_iput == 'SELECTION SORT' or sort_iput == 'SELECTION'):
     selection()
+elif (sort_iput == 'INSERTION SORT' or sort_iput == 'INSERTION'):
+    insertion()
 else:
     print("Invalid Answer!")
