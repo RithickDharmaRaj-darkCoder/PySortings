@@ -48,36 +48,31 @@ def insertion():
     print(f'After Insertion Sort : {lst}')
 
 def merge():
-    def mergesort(lst):
-        if len(lst) > 1:
-            mid = len(lst) // 2
-            lft_lst = lst[:mid]
-            right_lst = lst[mid:]
-            mergesort(lft_lst)
-            mergesort(right_lst)
-
-            (i, j, k) = (0, 0, 0)
-            while len(lft_lst) > i and len(right_lst) > j:
-                if lft_lst[i] < right_lst[j]:
-                    lst[k] = lft_lst[i]
-                    i += 1
-                    k += 1
-                else:
-                    lst[k] = right_lst[j]
-                    j += 1
-                    k += 1
-
-            while len(lft_lst) > i:
-                lst[k] = lft_lst[i]
-                i += 1
-                k += 1
-            while len(right_lst) > j:
-                lst[k] = right_lst[j]
-                j += 1
-                k += 1
-
-    lsize = int(input('How many numbers want to add : '))
-    lst = [int(input(f'Add number {i + 1} : ')) for i in range(lsize)]
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print(f'Before Merge Sort : {lst}')
-    mergesort(lst)
-    print(f'After Merge Sort : {lst}')
+
+    def merging2list(lft, right):
+        result = []
+        i, j = 0, 0
+        while i < len(lft) and j < len(right):
+            if lft[i] < right[j]:
+                result.append(lft[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+        result += lft[i:]
+        result += right[j:]
+        return result
+
+    def divide(lst):
+        if len(lst) <= 1:
+            return lst
+        else:
+            mid_val = len(lst) // 2
+            lft = divide(lst[:mid_val])
+            right = divide(lst[mid_val:])
+            return merging2list(lft, right)
+
+    print(f'After Merge Sort : {divide(lst)}')
