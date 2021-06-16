@@ -1,6 +1,6 @@
 # Controlling of sort...
 from sort_lst import *
-aval_sort = ('Bubble Sort','Selection Sort','Insertion Sort','Merge Sort','Heap Sort','Quick Sort')
+aval_sort = ('Bubble Sort','Selection Sort','Insertion Sort','Shell Sort','Merge Sort','Heap Sort','Quick Sort')
 print('Available Sortings...')
 count = 1
 for i in aval_sort:
@@ -15,11 +15,13 @@ def sortings():
         selection()
     elif (sort_iput == 'INSERTION SORT' or sort_iput == 'INSERTION' or sort_iput == '3'):
         insertion()
-    elif (sort_iput == 'MERGE SORT' or sort_iput == 'MERGE' or sort_iput == '4'):
+    elif (sort_iput == 'SHELL SORT' or sort_iput == 'SHELL' or sort_iput == '4'):
+        shell()
+    elif (sort_iput == 'MERGE SORT' or sort_iput == 'MERGE' or sort_iput == '5'):
         merge()
-    elif (sort_iput == 'HEAP SORT' or sort_iput == 'HEAP' or sort_iput == '5'):
+    elif (sort_iput == 'HEAP SORT' or sort_iput == 'HEAP' or sort_iput == '6'):
         heap()
-    elif (sort_iput == 'QUICK SORT' or sort_iput == 'QUICK' or sort_iput == '6'):
+    elif (sort_iput == 'QUICK SORT' or sort_iput == 'QUICK' or sort_iput == '7'):
         quick()
     else:
         print("Invalid Answer!")

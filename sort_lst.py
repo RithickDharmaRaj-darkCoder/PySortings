@@ -1,12 +1,9 @@
 # Collection of sorting methods..=
 
 def bubblesort():
-    print('----------  BUBBLE SORT ----------')
-    lst = []
-    lsize = int(input("Enter how many elements to be insert : "))
-    for i in range(lsize):
-        elst = int(input(f"Add Element {i+1} : "))
-        lst.append(elst)
+    print('\n----------  BUBBLE SORT ----------')
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print("Before Bubble Sort : ", lst)
     for i in range(len(lst) - 1):
         for outer in range(len(lst) - 1):
@@ -15,12 +12,9 @@ def bubblesort():
     print("After Bubble Sort  : ", lst)
 
 def selection():
-    print('----------  SELECTION SORT ----------')
-    lst = []
-    lsize = int(input("Enter how many elements to be insert : "))
-    for i in range(lsize):
-        elst = int(input(f"Add Element {i+1} : "))
-        lst.append(elst)
+    print('\n----------  SELECTION SORT ----------')
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print("Before Selection Sort : ", lst)
 
     for outer in range(len(lst) - 1):
@@ -33,12 +27,9 @@ def selection():
     print("After Selection Sort  : ", lst)
 
 def insertion():
-    print('----------  INSERTION SORT ----------')
-    lst = []
-    lsize = int(input("Enter how many elements to be insert : "))
-    for i in range(lsize):
-        elst = int(input(f"Add Element {i + 1} : "))
-        lst.append(elst)
+    print('\n----------  INSERTION SORT ----------')
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print(f'Before Insertion Sort : {lst}')
 
     for index in range(1, len(lst)):
@@ -50,8 +41,30 @@ def insertion():
         lst[postion] = curent_value
     print(f'After Insertion Sort  : {lst}')
 
+def shell():
+    print('\n----------  SHELL SORT ----------')
+    lsize = int(input('How many numbers want to insert : '))
+    lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
+    print(f'Before Shell Sort : {lst}')
+
+    def shell_sort(lst):
+        gap = len(lst) // 2
+        while gap > 0:
+            for cvi in range(gap, len(lst)):
+                cv = lst[cvi]
+                pos = cvi
+                while pos >= gap and cv < lst[pos - gap]:
+                    lst[pos] = lst[pos - gap]
+                    pos -= gap
+                lst[pos] = cv
+            gap //= 2
+        return lst
+
+    shell_sort(lst)
+    print(f'After Shell Sort  : {lst}')
+
 def merge():
-    print('----------  MERGE SORT ----------')
+    print('\n----------  MERGE SORT ----------')
     lsize = int(input('How many numbers want to insert : '))
     lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print(f'Before Merge Sort : {lst}')
@@ -82,7 +95,7 @@ def merge():
     print(f'After Merge Sort  : {divide(lst)}')
 
 def heap():
-    print('----------  HEAP SORT ----------')
+    print('\n----------  HEAP SORT ----------')
     lsize = int(input('How many numbers want to insert : '))
     lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print(f'Before Heap Sort : {lst}')
@@ -112,7 +125,7 @@ def heap():
     print(f'After Heap Sort  : {heapsort(lst)}')
 
 def quick():
-    print('----------  QUICK SORT ----------')
+    print('\n----------  QUICK SORT ----------')
     lsize = int(input('How many numbers want to insert : '))
     lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print(f'Before Quick Sort : {lst}')
