@@ -46,7 +46,7 @@ def shell():
     lsize = int(input('How many numbers want to insert : '))
     lst = [int(input(f'Add Number {i + 1} : ')) for i in range(lsize)]
     print(f'Before Shell Sort : {lst}')
-# lst = [5,2,6,8,7]
+
     def shell_sort(lst):
         gap = len(lst) // 2
         while gap > 0:
